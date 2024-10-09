@@ -1,0 +1,53 @@
+<p>pai works!</p>
+<app-filho (filhoSend)="handlePai($event)"></app-filho>
+<h2>{{paiAloc}}</h2>
+<hr>
+<!-- TWO WAY DATA BINDING -->
+<h1>TWO WAY DATA BINDING</h1>
+<input type="text" name="name" [(ngModel)]="inputEx" placeholder="type something">
+<p>{{inputEx}}</p>
+
+<hr>
+<!-- RENDERIZAÇÃO DE LISTA -->
+<h1>{{"renderização de lista" | uppercase}}</h1>
+<ul *ngFor="let carro of carros">
+    <li>{{carro.name}}, ano: {{carro.age}}</li>
+    <button (click)="handleColor(carro)">Detalhes</button>
+    <button (click)="removeCarro(carro)">Remover</button>
+
+</ul>
+<p>{{colorDetail}}</p>
+
+<hr>
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<hr>
+
+
+
+<hr>

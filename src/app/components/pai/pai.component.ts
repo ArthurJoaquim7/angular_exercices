@@ -11,6 +11,7 @@ export class PaiComponent {
   paiAloc: string;
 
   constructor(private testService: TestService) {
+    this.getCarros();
     this.paiAloc = '';
   }
 
@@ -29,13 +30,16 @@ export class PaiComponent {
   inputEx = '';
 
   // RENDERIZAÇÃO DE LISTA
-  carros: Carros[] = [
-    { name: "BMW", age: 2019, color: "Branco" },
-    { name: "Mercedes", age: 2012, color: "Preto" },
-    { name: "Honda", age: 2020, color: "Prata" },
-  ];
+  carros: Carros[] = [];
+
   colorDetail = '';
   handleColor(carros: Carros) {
     this.colorDetail = `O carro: ${carros.name} tem a cor: ${carros.color}`;
   }
+
+  // =========== REQUISIÇÕES HTTP
+  getCarros(): void {
+    this.testService.getAll().subscribe((carros) => (this.carros = carros));;
+  } // ACESSA O listService e no getAll chama os dados
+
 }

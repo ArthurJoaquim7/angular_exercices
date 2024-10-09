@@ -12,7 +12,7 @@
 <h1>{{"renderização de lista" | uppercase}}</h1>
 <ul *ngFor="let carro of carros">
     <li>{{carro.name}}, ano: {{carro.age}}</li>
-    <button (click)="handleColor(carro)">Detalhes</button>
+    <button (click)="handleColor(carro)">Mostrar a cor</button>
     <button (click)="removeCarro(carro)">Remover</button>
 
 </ul>

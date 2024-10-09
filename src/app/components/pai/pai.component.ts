@@ -20,16 +20,17 @@ export class PaiComponent {
   }
 
 
-  // SERVICES
+  // =========== SERVICES
   removeCarro(carro: Carros) {
-    this.carros = this.testService.remove(this.carros, carro)
+    this.carros = this.carros.filter((a) => (carro.name !== a.name))
+    this.testService.remove(carro.id).subscribe();
   }
 
 
-  // TWO WAY DATA BINDING
+  // =========== TWO WAY DATA BINDING
   inputEx = '';
 
-  // RENDERIZAÇÃO DE LISTA
+  // =========== RENDERIZAÇÃO DE LISTA
   carros: Carros[] = [];
 
   colorDetail = '';

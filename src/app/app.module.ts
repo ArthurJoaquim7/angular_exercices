@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PaiComponent } from './components/pai/pai.component';
 import { FilhoComponent } from './components/filho/filho.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PaiComponent,
-    FilhoComponent
+    FilhoComponent,
+    ItemDetailComponent
   ],
   imports: [
     BrowserModule,

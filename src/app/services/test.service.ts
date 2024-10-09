@@ -13,14 +13,22 @@ export class TestService {
 
   constructor(private http: HttpClient) { }
 
-  remove(carros: Carros[], carro: Carros) {
-    return carros.filter((a) => carro.name !== a.name)
-  }
+
   // =========== REQUISIÇÕES HTTP
   private apiUrl = 'http://localhost:3000/carros'
 
   getAll(): Observable<Carros[]> { // OBSERVA SE O ARRAY DE CARROS CHEGA NA REQUISIÇÃO DA API
     return this.http.get<Carros[]>(this.apiUrl);
   }
+
+  // =========== DYNAMIC ROUTES
+  getItem(id: number): Observable<Carros> {
+    return this.http.get<Carros>(`${this.apiUrl}/${id}`);
+  }
+
+  remove(id: number) {
+    return this.http.delete<Carros>(`${this.apiUrl}/${id}`)
+  }
+
 }
 
